@@ -58,7 +58,7 @@ public class ShoppingCartApp {
                     } else
                         System.out.println("Invalid selection");
 
-                  
+                  checkout();
                 }
                 case 2 -> {
                     System.out.println("\nHawaiian Pizza\n");
@@ -95,7 +95,8 @@ public class ShoppingCartApp {
                         System.out.println("Total = " + amountOwing + "\n");
                     } else
                         System.out.println("Invalid selection");
-
+  		  
+                    checkout();
                 }
                 case 3 -> {
                     System.out.println("\nMediterranean Pizza\n");
@@ -133,6 +134,7 @@ public class ShoppingCartApp {
                     } else
                         System.out.println("Invalid selection");
 
+		   checkout();
                 }
                 default -> {
                     System.out.println("Invalid selection. Please select another");
@@ -192,5 +194,21 @@ public class ShoppingCartApp {
         }
 
         return amount;
+    }
+
+     public static void checkout() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(" ");
+        System.out.println("1. Checkout ");
+        System.out.println("2. Add more pizza ");
+        int selection = scan.nextInt();
+        if (selection == 1) {
+            amountOwing += amountOwing;
+            System.out.println("Total amount owing = " + amountOwing + "\n");
+            menuChoice = 6;
+        } else if (selection == 2) {
+            menu();
+        } else
+            System.out.println("Invalid selection");
     }
 }

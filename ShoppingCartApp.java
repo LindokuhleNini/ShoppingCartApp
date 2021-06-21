@@ -44,6 +44,20 @@ public class ShoppingCartApp {
 
                     }
 
+		    System.out.println("Do you want toppings? ");
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int input = scan.nextInt();
+
+                    if (input == 1) {
+                        amountOwing += addToppings();
+                        System.out.println("Total = " + amountOwing + "\n");
+
+                    } else if (input == 2) {
+                        System.out.println("Total = " + amountOwing + "\n");
+                    } else
+                        System.out.println("Invalid selection");
+
                   
                 }
                 case 2 -> {
@@ -68,6 +82,20 @@ public class ShoppingCartApp {
                         choice = scan.nextInt();
                     }
 
+		    System.out.println("Do you want toppings? ");
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int input = scan.nextInt();
+
+                    if (input == 1) {
+                        amountOwing += addToppings();
+                        System.out.println("Total = " + amountOwing + "\n");
+
+                    } else if (input == 2) {
+                        System.out.println("Total = " + amountOwing + "\n");
+                    } else
+                        System.out.println("Invalid selection");
+
                 }
                 case 3 -> {
                     System.out.println("\nMediterranean Pizza\n");
@@ -91,6 +119,20 @@ public class ShoppingCartApp {
                         choice = scan.nextInt();
                     }
 
+		    System.out.println("Do you want toppings? ");
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int input = scan.nextInt();
+
+                    if (input == 1) {
+                        amountOwing += addToppings();
+                        System.out.println("Total = " + amountOwing + "\n");
+
+                    } else if (input == 2) {
+                        System.out.println("Total = " + amountOwing + "\n");
+                    } else
+                        System.out.println("Invalid selection");
+
                 }
                 default -> {
                     System.out.println("Invalid selection. Please select another");
@@ -111,5 +153,44 @@ public class ShoppingCartApp {
         System.out.println("6. Cancel");
         menuChoice = scan.nextInt();
 
+    }
+
+    public static double addToppings() {
+
+        Scanner scan = new Scanner(System.in);
+        int choice;
+        double amount = 0;
+
+        System.out.println("Choose Toppings (Not more than 3): ");
+        System.out.println("1. Cheddar Cheese R20.90");
+        System.out.println("2. Mushrooms R25.90");
+        System.out.println("3. Olives R25.90");
+        System.out.println("4. Avocado R32.90");
+        System.out.println("5. Pineapple R20.90");
+        System.out.println("6. Done");
+
+        int x = 0;
+        while (x < 3) {
+            choice = scan.nextInt();
+
+            if (choice == 1) {
+                amount += 20.90;
+            } else if (choice == 2) {
+                amount += 25.90;
+            } else if (choice == 3) {
+                amount += 25.90;
+            } else if (choice == 4) {
+                amount += 32.90;
+            } else if (choice == 5) {
+                amount += 20.90;
+            } else if (choice == 6) {
+                return amount;
+            } else {
+                System.out.println("You can only add up to 3 toppings");
+            }
+            x++;
+        }
+
+        return amount;
     }
 }

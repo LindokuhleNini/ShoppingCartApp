@@ -14,6 +14,7 @@ public class ShoppingCartApp {
 
      Scanner scan = new Scanner(System.in);
      
+     System.out.println(" ");
      System.out.println("*************************************");
      System.out.println("WELCOME! HAVE FUN SHOPPING");
      System.out.println("*************************************");
